@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\anggota;
+use App\Models\anggota
 
 class AnggotaController extends Controller
 {
