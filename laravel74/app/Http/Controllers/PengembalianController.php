@@ -14,12 +14,10 @@ class PengembalianController extends Controller
         return view ('pengembalian.index',compact(['pengembalian']));
     }
 
-    //untuk tombol tambah data yg akan mnambahkan formulir
     public function tambah(){
         return view('pengembalian.tambah');
     }
-
-    //untuk tombol simpan yang akan mengirim data masukan ke DB
+    
     public function masukan(Request $request){
         pengembalian::create($request->except(['_token','submit']));
         return redirect('/pengembalian');
@@ -30,10 +28,12 @@ class PengembalianController extends Controller
         $pengembalian->delete();
         return redirect('/pengembalian');
     }
+
     public function edit($id_pengembalian){
         $pengembalian=pengembalian::where('id_pengembalian',$id_pengembalian)->first();
         return view ('pengembalian.edit',compact(['pengembalian']));
     }
+    
     public function update (Request $request,$id_pengembalian){
         $pengembalian=pengembalian::where('id_pengembalian',$id_pengembalian);
         $pengembalian->update($request->except('_token','submit','_method'));

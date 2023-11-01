@@ -14,12 +14,10 @@ class RakController extends Controller
         return view ('rak.index',compact(['rak']));
     }
 
-    //untuk tombol tambah data yg akan mnambahkan formulir
     public function tambah(){
         return view('rak.tambah');
     }
 
-    //untuk tombol simpan yang akan mengirim data masukan ke DB
     public function masukan(Request $request){
         rak::create($request->except(['_token','submit']));
         return redirect('/rak');
@@ -30,10 +28,12 @@ class RakController extends Controller
         $rak->delete();
         return redirect('/rak');
     }
+
     public function edit($id_rak){
         $rak=rak::where('id_rak',$id_rak)->first();
         return view ('rak.edit',compact(['rak']));
     }
+    
     public function update (Request $request,$id_rak){
         $rak=rak::where('id_rak',$id_rak);
         $rak->update($request->except('_token','submit','_method'));

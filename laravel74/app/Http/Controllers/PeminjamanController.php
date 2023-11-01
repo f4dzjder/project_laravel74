@@ -14,12 +14,10 @@ class PeminjamanController extends Controller
         return view ('peminjaman.index',compact(['peminjaman']));
     }
 
-    //untuk tombol tambah data yg akan mnambahkan formulir
     public function tambah(){
         return view('peminjaman.tambah');
     }
 
-    //untuk tombol simpan yang akan mengirim data masukan ke DB
     public function masukan(Request $request){
         peminjaman::create($request->except(['_token','submit']));
         return redirect('/peminjaman');
@@ -30,10 +28,12 @@ class PeminjamanController extends Controller
         $peminjaman->delete();
         return redirect('/peminjaman');
     }
+
     public function edit($id_peminjaman){
         $peminjaman=peminjaman::where('id_peminjaman',$id_peminjaman)->first();
         return view ('peminjaman.edit',compact(['peminjaman']));
     }
+    
     public function update (Request $request,$id_peminjaman){
         $peminjaman=peminjaman::where('id_peminjaman',$id_peminjaman);
         $peminjaman->update($request->except('_token','submit','_method'));
