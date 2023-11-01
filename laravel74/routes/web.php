@@ -22,7 +22,7 @@ use App\Http\Controllers\PengembalianController;
 Route::get('/', function () {
     return view('index');
 }); 
-
+///test
 ///////////////////////////////////////////////////////////////////////////////////
 Route::get('/anggota',[AnggotaController::class,'index']);
 
