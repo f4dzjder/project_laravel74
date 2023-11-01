@@ -5,9 +5,7 @@
     <button>SEARCH</button>
 </form>
 
-
-<table border='1'align=center>
-    
+<table border='1'align=center>    
     <tr>
         <td>ID_Anggota</td>
         <td>kode_anggota</td>
@@ -18,9 +16,10 @@
         <td>Alamat_Anggota</td>
         <td>Edit Data</td>
         <td>Hapus Data</td>
-        
     </tr>
+
     @foreach ($anggota as $a)
+    
     <tr>
         <td>{{$a->id_anggota}}</td>
         <td>{{$a->kode_anggota}}</td>
@@ -29,7 +28,6 @@
         <td>{{$a->jurusan_anggota}}</td>
         <td>{{$a->no_telp_anggota}}</td>
         <td>{{$a->alamat_anggota}}</td>
-
         <td>
             <a href="/anggota/{{$a->id_anggota}}/edit" type="button">edit</a>
         </td>
@@ -40,11 +38,13 @@
                 <input type="submit" value="DELETE">
             </form>
         </td>
-
-
     </tr>
+
     @endforeach
+
 </table>
+
 <a href="/anggota/tambah">tambah data coy</a>
+
 {{$anggota->links()}}
 

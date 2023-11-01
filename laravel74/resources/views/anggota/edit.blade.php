@@ -1,6 +1,4 @@
 <h1>edit data</h1>
-
-
 <form action="/anggota/{{$anggota->id_anggota}}" method="POST">
     @method('put')
     @csrf

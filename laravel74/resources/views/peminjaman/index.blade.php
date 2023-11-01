@@ -5,7 +5,6 @@
     <button>SEARCH</button>
 </form>
 
-
 <table border='1'align=center>
     
     <tr>
@@ -15,12 +14,12 @@
         <td>ID Buku</td>
         <td>ID Anggota</td>
         <td>ID Petugas</td>
-        
         <td>edit</td>
         <td>delete</td>
-        
     </tr>
+
     @foreach ($peminjaman as $a)
+    
     <tr>
         <td>{{$a->id_peminjaman}}</td>
         <td>{{$a->tanggal_pinjam}}</td>
@@ -28,8 +27,6 @@
         <td>{{$a->id_buku}}</td>
         <td>{{$a->id_anggota}}</td>
         <td>{{$a->id_petugas}}</td>
-       
-
         <td>
             <a href="/peminjaman/{{$a->id_peminjaman}}/edit" type="button">edit</a>
         </td>
@@ -40,11 +37,13 @@
                 <input type="submit" value="DELETE">
             </form>
         </td>
-
-
     </tr>
+
     @endforeach
+
 </table>
+
 <a href="/peminjaman/tambah">tambah data coy</a>
+
 {{$peminjaman->links()}}
 

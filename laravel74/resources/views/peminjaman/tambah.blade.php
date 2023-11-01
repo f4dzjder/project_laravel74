@@ -6,6 +6,5 @@
     <input type="text" name="id_buku" placeholder="id_buku"><br>
     <input type="text" name="id_anggota" placeholder="id_anggota"><br>
     <input type="text" name="id_petugas" placeholder="id_petugas"><br>
-
     <input type="submit" name="submit" value="KIRIM DATA">
 </form>

@@ -1,6 +1,4 @@
 <h1>edit data</h1>
-
-
 <form action="/buku/{{$buku->id_buku}}" method="POST">
     @method('put')
     @csrf

@@ -25,24 +25,12 @@ Route::get('/', function () {
 
 ///////////////////////////////////////////////////////////////////////////////////
 Route::get('/anggota',[AnggotaController::class,'index']);
-
-//route untuk menambah data tabel anggota
 Route::get('/anggota/tambah',[AnggotaController::class,'tambah']);
-
-//untk kirim data anggota
 Route::post('/anggota/masukan',[AnggotaController::class,'masukan']);
-
-//untuk hapus data anggota
 Route::delete('/anggota/{id_anggota}',[AnggotaController::class,'delete']);
-
-//untuk menampilkan formulir edit anggota
 Route::get('/anggota/{id_anggota}/edit',[AnggotaController::class,'edit']);
-
-//memyimpan data yg sudah di update file angggota
 Route::put('/anggota/{id_anggota}',[AnggotaController::class,'update']);
 ///////////////////////////////////////////////////////////////////////////////////
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////
 Route::get('/petugas',[PetugasController::class,'index']);
